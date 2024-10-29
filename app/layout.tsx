@@ -28,8 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative text-white bg-black `}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative font-poppins text-white bg-black `}>
         <div className="relative z-[2]">
           {children}
         </div>
