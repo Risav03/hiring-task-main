@@ -1,32 +1,36 @@
-# Home Assignment
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Welcome to the Home Assignment! This task is designed to evaluate your frontend and backend development skills. Please follow the instructions below based on the position you applied for.
+## Getting Started
 
-## Backend Developer
+First, run the development server:
 
-If you applied for the backend developer position, please read the `backend.md` file thoroughly. Your task is to provide solutions for migrating the existing Express backend to ASP.NET. Consider the features and API endpoints carefully to ensure a smooth transition.
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-## Frontend Developer
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-If you applied for the frontend developer position, please review the `frontend.md` file in detail. Your objective is to create frontend solutions that seamlessly interact with our backend services. Focus on ensuring a perfect integration between the frontend and backend.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-## Installation Instructions
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-To get started with the backend, please follow these steps:
+## Learn More
 
-1. **Install Dependencies**
-   Navigate to the `task` directory and install the necessary dependencies by running the following command:
+To learn more about Next.js, take a look at the following resources:
 
-   ```bash
-   cd task
-   npx yarn
-   ```
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-2. **Run the Backend**
-   After the dependencies are installed, you can start the backend server with:
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-   ```bash
-   npx yarn dev
-   ```
+## Deploy on Vercel
 
-If you have any questions or need further clarification, feel free to reach out. Good luck, and we look forward to seeing your solutions!
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
