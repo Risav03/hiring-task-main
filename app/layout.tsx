@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 
 import "./globals.css";
 import { Background } from "@/components/UI/background";
+import { Providers } from "@/utils/Providers";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased relative font-poppins text-white bg-black `}>
         <div className="relative z-[2]">
+          <Providers>
           {children}
+        </Providers>
         </div>
 
         <Background/>
