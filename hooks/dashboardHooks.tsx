@@ -1,4 +1,5 @@
 "use client"
+import { useGlobalContext } from '@/context/dashboardContext'
 import axios from 'axios'
 import { headers } from 'next/headers'
 import { useRouter } from 'next/navigation'
@@ -7,22 +8,24 @@ import { useCookies } from 'react-cookie'
 
 export const useDashboardHooks = () => {
 
-    const[titles, setTitles] = useState<Array<titleType>>([])
+    const{fetchTitles, setAddTitleModal} = useGlobalContext()
+    const[titleName, setTitleName] = useState<string>("")
+    
     const[cookies] = useCookies(['token'])
-    const router = useRouter();
 
-    async function fetchTitles(){
-        try{
-            const res = await axios.get("http://localhost:8000/api/v1/title", {headers:{"Authorization" : cookies.token}})
-
-            setTitles(res.data);
+    async function addTitle(){
+        if(titleName == ""){
+            return;
         }
-        catch(err:any){
+        try{
+            const res = await axios.post("http://localhost:8000/api/v1/title", {title: titleName}, {headers:{"Authorization": cookies.token}});
+            console.log(res);
+            fetchTitles()
+            setAddTitleModal(false);
+            setTitleName("")
+        }
+        catch(err){
             console.log(err);
-
-            if(err.status == 401){
-                router.push("/connect");
-            }
         }
     }
 
@@ -31,6 +34,6 @@ export const useDashboardHooks = () => {
     },[cookies])
 
   return {
-    titles, fetchTitles
+    fetchTitles, titleName, setTitleName, addTitle
   }
 }

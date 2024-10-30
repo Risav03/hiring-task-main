@@ -3,10 +3,11 @@ import { useDashboardHooks } from '@/hooks/dashboardHooks'
 import React, { useEffect } from 'react'
 import { Card } from '../UI/card';
 import { Subheading } from '../UI/subheading';
+import { useGlobalContext } from '@/context/dashboardContext';
 
 export const TitleRenderer = () => {
 
-    const{titles} = useDashboardHooks();
+    const{titles, setTitles} = useGlobalContext();
 
     const formatDate = (date:string) => {
         const newDate = new Date(date);
@@ -15,7 +16,7 @@ export const TitleRenderer = () => {
 
   return (
     <div className='w-full flex flex-wrap gap-2 my-5'>
-        { titles.length > 0 &&
+        { titles && titles?.length > 0 &&
             titles?.map((item:titleType)=>(
                 <Card key={item.uuid} className=''>
                     <Subheading size='text-xl font-semibold mb-5 w-60' >{item.title}</Subheading>
