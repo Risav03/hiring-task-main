@@ -32,7 +32,6 @@ export const GlobalContextProvider = ({ children }: { children: ReactNode }) => 
     async function fetchTitles() {
         try {
             const res = await axios.get("http://localhost:8000/api/v1/title", { headers: { "Authorization": cookies.token } })
-            console.log(res);
             setTitles(res.data);
         }
         catch (err: any) {

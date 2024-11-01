@@ -20,6 +20,7 @@ export const AddTitleModal = () => {
                 </div>
             </div>
             <InputComp content={titleName} heading='Title name' placeholder='Solidty Developer' required={true} setContent={setTitleName} ></InputComp>
+            <h4 className='text-right font-semibold text-xs mt-1'>{titleName.length}/24</h4>
             <Button type='primary' className='mt-4 w-full' onClick={()=>{addTitle()}} >Add</Button>
         </Card>
     </div>

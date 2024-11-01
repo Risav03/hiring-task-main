@@ -73,7 +73,6 @@ const ConnectWallet: React.FC<ConnectWalletProps> = ({
         onAddressChange?.(address);
         onConnectedChange?.(true);
 
-        // Set up the account change listener only after successful connection
         window.ethereum.on('accountsChanged', handleAccountsChanged);
       } else {
         throw new Error('No Ethereum wallet found. Please install MetaMask.');
@@ -99,7 +98,7 @@ const ConnectWallet: React.FC<ConnectWalletProps> = ({
 
   const disconnectWallet = (): void => {
     if (window.ethereum) {
-      // Remove the account change listener on disconnect
+
       window.ethereum.removeListener('accountsChanged', handleAccountsChanged);
       removeCookie('address');
     }

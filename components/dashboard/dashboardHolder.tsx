@@ -14,8 +14,7 @@ import { AddTitleModal } from './addTitleModal'
 
 export const DashboardHolder = () => {
 
-    const{fetchTitles, setAddTitleModal} = useGlobalContext()
-    const{titleName, setTitleName, addTitle} = useDashboardHooks()
+    const{setAddTitleModal} = useGlobalContext()
 
   return (
     <div className='mt-10 w-full border-t-[1px] border-green-500/20 py-10'>
